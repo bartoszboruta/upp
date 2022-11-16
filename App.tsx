@@ -7,8 +7,14 @@ import Paragraph from "./src/components/typography/Paragraph";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Body>Body</Body>
+    <View
+      style={StyleSheet.flatten([
+        { backgroundColor: "red" },
+        styles.container,
+        styles.container1,
+      ])}
+    >
+      <Body variant="large">Body</Body>
       <Header>Header</Header>
       <Paragraph>Paragraph</Paragraph>
       <StatusBar style="auto" />
@@ -17,6 +23,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  container1: {
+    margin: 20,
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
